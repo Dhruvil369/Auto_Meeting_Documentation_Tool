@@ -1,0 +1,22 @@
+## 👥 Participants:
+*   Dhruvil John
+*   Chatin
+*   Meal by
+*   Varun by
+
+## 🗣️ Key Conversation Summary:
+This meeting was held to discuss a UI audit project, specifically focusing on color contrast and accessibility implementation. The discussion primarily revolved around theoretical concepts related to color, contrast, and accessibility within the context of the project, which is for Germany. The team is currently contemplating how to execute these operations.
+
+## 📋 Action Items:
+*   None explicitly stated in this meeting.
+
+## 🔁 Next Meeting Points:
+*   Discuss the next practical steps for the UI audit project.
+*   Determine how to combine various project steps.
+*   Address and resolve current confusions regarding the implementation of the UI audit project.
+
+## 💡 Decisions Taken:
+*   No explicit decisions were made during this meeting.
+
+## ❗ Issues/Risks:
+*   The team expressed confusion regarding the practical approach and operational aspects of implementing the UI audit project.

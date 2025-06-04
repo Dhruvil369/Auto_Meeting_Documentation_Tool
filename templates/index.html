@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Meeting Recorder</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>📝 Offline Meeting Documentation</h1>
+        <button id="startBtn" onclick="startMeeting()">Start Meeting</button>
+        <button id="endBtn" onclick="endMeeting()" disabled>End Meeting</button>
+        <div id="status">🕓 Waiting to start...</div>
+
+        <div id="report" style="display: none;">
+            <h2>📄 Meeting Report</h2>
+            <pre id="output"></pre>
+        </div>
+    </div>
+
+    <script>
+        function startMeeting() {
+            fetch('/start', {
+                method: 'POST'
+            }).then(() => {
+                document.getElementById('status').innerText = "🔴 Meeting is in progress...";
+                document.getElementById('startBtn').disabled = true;
+                document.getElementById('endBtn').disabled = false;
+            });
+        }
+
+        function endMeeting() {
+            fetch('/stop', {
+                    method: 'POST'
+                })
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('status').innerText = "✅ Meeting Ended. Report Generated.";
+                    document.getElementById('report').style.display = "block";
+                    document.getElementById('output').innerText = data.report;
+                    document.getElementById('startBtn').disabled = false;
+                    document.getElementById('endBtn').disabled = true;
+                });
+        }
+    </script>
+</body>
+
+</html>
